@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class CounterUtil {
     private ShortenURLMapRepository shortenURLMapRepository;
-    private static Long counter = 1000000L;
+    private static Long counter = 100000000L;
 
     @Autowired
     public CounterUtil(ShortenURLMapRepository shortenURLMapRepository) {

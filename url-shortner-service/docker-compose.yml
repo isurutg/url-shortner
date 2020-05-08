@@ -15,7 +15,7 @@ services:
   us-service:
     build: .
     ports:
-      - "8081:8080"
+      - "8080:8080"
     container_name: us-service
     links:
       - mongodb
