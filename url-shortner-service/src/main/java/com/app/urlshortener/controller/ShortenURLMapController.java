@@ -1,5 +1,7 @@
 package com.app.urlshortener.controller;
 
+import javax.validation.Valid;
+
 import com.app.urlshortener.exception.NotFoundException;
 import com.app.urlshortener.request.ShortenUrlRequest;
 import com.app.urlshortener.response.ApiResponse;
@@ -19,7 +21,7 @@ public class ShortenURLMapController {
     }
 
     @PostMapping
-    public ApiResponse createShortUrl(@RequestBody ShortenUrlRequest ShortenUrlRequest) {
+    public ApiResponse createShortUrl(@RequestBody @Valid ShortenUrlRequest ShortenUrlRequest) {
         try {
             return new ApiResponse("SUCCESS", "Short URL creation successful",
                     shortenURLMapService.createShortenURLMap(ShortenUrlRequest));
