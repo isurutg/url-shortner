@@ -5,7 +5,7 @@ services:
     container_name: mongodb
     hostname: mongodb
     volumes:
-      - /var/lib/usservice_mongo:/data/db
+      - ~/usservice_mongo:/data/db
     ports:
       - "27018:27018"
     networks:
