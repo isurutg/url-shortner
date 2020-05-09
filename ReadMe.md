@@ -1,26 +1,25 @@
-How to Run
+## How to Run
 
-Method 1:
-# Go to url shortner service path
+# Method 1:
+- Go to url shortner service path
 cd url-shortner-service
-# build package
+- build package
 mvn clean package -DskipTests
-# run service
+- run service
 mvn clean package -DskipTests
 java -Dspring.data.mongodb.uri=${mongoDB_URI} -Dapplication.url=${application_url} -jar /app/server/target/url-shotner-0.0.1-SNAPSHOT.jar
 
-Method 2
-# Go to url shortner service path
-cd url-shortner-service
-# build package
+# Method 2
+- Go to url shortner service path
+cd url-shortner-service-# build package
 mvn clean package -DskipTests
-# run using docker 
-docker-compose up
+- run using docker 
+docker-compose up --build
 
 
-Available URI's
+# Available URI's
 
-# create short code
+- create short code
 POST http://localhost:8080
 body {
     longUrl: "http://www.google.com"
@@ -36,5 +35,5 @@ response {
 }
 
 
-# redirect to long url
+- redirect to long url
 GET http://localhost:8081/mjg
