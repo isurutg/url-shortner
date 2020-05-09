@@ -18,16 +18,22 @@ public class CounterUtil {
         this.shortenURLMapRepository = shortenURLMapRepository;
     }
 
+    /**
+     * set counter value when start the application.
+     */
     @EventListener(ApplicationReadyEvent.class)
     public void setCounterValue() {
-        ShortenURLMap shortenURLMap = shortenURLMapRepository.findFirstByOrderByIdDesc();
+        ShortenURLMap shortenURLMap = shortenURLMapRepository.findFirstByOrderByIdDesc().orElse(null);
         Long maxId = shortenURLMap != null ? shortenURLMap.getId() : counter;
         counter = maxId + 1;
     }
 
+    /**
+     * get recent value and return it to service
+     * @return on going counter value.
+     */
     public Long getCurrentCounterValue() {
-        Long currentCounter = counter++;
-        return currentCounter;
+        return counter++;
     }
 
 }

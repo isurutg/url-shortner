@@ -8,6 +8,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class DateUtil {
 
+    /**
+     * Calculate url expoire date.
+     * @return expiration date.
+     */
     public Date getExpireDate() {
         Calendar cal = Calendar.getInstance();
         cal.setTime(new Date());
